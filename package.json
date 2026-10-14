@@ -1,0 +1,21 @@
+{
+  "name": "proje_bul",
+  "version": "1.0.0",
+  "description": "Fentek Yarışma, Hackathon ve Etkinlik Radarı",
+  "main": "server/server.js",
+  "type": "module",
+  "scripts": {
+    "build": "npm --prefix client install && npm --prefix client run build",
+    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"cyan,magenta\" \"npm run server\" \"npm run client\"",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "node server/server.js",
+    "client": "npm --prefix client run dev"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "cheerio": "^1.0.0",
+    "concurrently": "^9.1.2",
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  }
+}
